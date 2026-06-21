@@ -1,11 +1,15 @@
 from tkinter.ttk import Button
 from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
 
 class MainWidget(Widget):
     pass
+
+#class GridLayoutExemple(GridLayout):
+#   pass
 
 class AnchorLayoutExemple(AnchorLayout):
     pass
