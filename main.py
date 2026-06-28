@@ -13,10 +13,13 @@ class MainWidget(Widget):
     pass
 
 class WidgetsExample(GridLayout):
-    mon_texte = StringProperty("Bonjour!")
+    compteur = 1
+    mon_texte = StringProperty("1")
     def on_button_click(self):
         print("Button click")
-        self.mon_texte = "Hello"
+        self.compteur += 1
+        self.mon_texte = str(self.compteur)
+        
 
 class GridLayoutExemple(GridLayout):
     pass
