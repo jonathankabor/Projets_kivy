@@ -42,6 +42,11 @@ class WidgetsExemple(GridLayout):
         else:
             print("Switch OFF")
             self.compteur_actif = False
+            
+    def on_slider_value(self, widget):
+        print("Slider value: " + str(int(widget.value)))
+        self.compteur = int(widget.value)
+        self.mon_texte = str(self.compteur)
 
 class GridLayoutExemple(GridLayout):
     pass
