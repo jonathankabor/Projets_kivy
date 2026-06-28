@@ -7,9 +7,16 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.metrics import dp
+from kivy.properties import StringProperty
 
 class MainWidget(Widget):
     pass
+
+class WidgetsExample(GridLayout):
+    mon_texte = StringProperty("Bonjour!")
+    def on_button_click(self):
+        print("Button click")
+        self.mon_texte = "Hello"
 
 class GridLayoutExemple(GridLayout):
     pass
