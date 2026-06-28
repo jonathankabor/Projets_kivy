@@ -8,14 +8,16 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.metrics import dp
 from kivy.properties import StringProperty
+from kivy.properties import BooleanProperty
 
 class MainWidget(Widget):
     pass
 
 class WidgetsExemple(GridLayout):
     compteur = 1
-    compteur_actif = False
+    compteur_actif = BooleanProperty(False)
     mon_texte = StringProperty("1")
+    
     def on_button_click(self):
         print("Button click")
         
