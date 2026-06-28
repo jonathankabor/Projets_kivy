@@ -12,13 +12,21 @@ from kivy.properties import StringProperty
 class MainWidget(Widget):
     pass
 
-class WidgetsExample(GridLayout):
+class WidgetsExemple(GridLayout):
     compteur = 1
     mon_texte = StringProperty("1")
     def on_button_click(self):
         print("Button click")
         self.compteur += 1
         self.mon_texte = str(self.compteur)
+        
+    def on_toggle_button_state(self, widget):
+        if widget.state == "down":
+            print("Toggle button ON")
+            widget.text = "ON"
+        else:
+            print("Toggle button OFF")
+            widget.text = "OFF"
         
 
 class GridLayoutExemple(GridLayout):
