@@ -34,6 +34,14 @@ class WidgetsExemple(GridLayout):
             print("Toggle button OFF")
             widget.text = "OFF"
             self.compteur_actif = False
+            
+    def on_switch_active(self, widget):
+        if widget.active:
+            print("Switch ON")
+            self.compteur_actif = True
+        else:
+            print("Switch OFF")
+            self.compteur_actif = False
 
 class GridLayoutExemple(GridLayout):
     pass
