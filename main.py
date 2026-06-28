@@ -14,20 +14,24 @@ class MainWidget(Widget):
 
 class WidgetsExemple(GridLayout):
     compteur = 1
+    compteur_actif = False
     mon_texte = StringProperty("1")
     def on_button_click(self):
         print("Button click")
-        self.compteur += 1
-        self.mon_texte = str(self.compteur)
+        
+        if self.compteur_actif:
+            self.compteur += 1
+            self.mon_texte = str(self.compteur)
         
     def on_toggle_button_state(self, widget):
         if widget.state == "down":
             print("Toggle button ON")
             widget.text = "ON"
+            self.compteur_actif = True
         else:
             print("Toggle button OFF")
             widget.text = "OFF"
-        
+            self.compteur_actif = False
 
 class GridLayoutExemple(GridLayout):
     pass
