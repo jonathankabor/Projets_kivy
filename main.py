@@ -1,6 +1,7 @@
 #from tkinter.ttk import Button
 from kivy.uix.button import Button
 from kivy.app import App
+from kivy.uix.image import Image
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
@@ -9,6 +10,7 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.metrics import dp
 from kivy.properties import StringProperty
 from kivy.properties import BooleanProperty
+import sys
 
 
 
@@ -94,8 +96,12 @@ class BoxLayoutExemple(BoxLayout):
         self.add_widget(b3)
 """
 
+class MyApp(App):
+    def build(self):
+        return Image(source="images/donut.gif")
 class LeLabApp(App):
     pass
+
 
 LeLabApp().run()
 
