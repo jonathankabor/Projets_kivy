@@ -10,6 +10,8 @@ from kivy.metrics import dp
 from kivy.properties import StringProperty
 from kivy.properties import BooleanProperty
 
+
+
 class MainWidget(Widget):
     pass
 
@@ -49,9 +51,19 @@ class WidgetsExemple(GridLayout):
         self.compteur = int(widget.value)
         self.mon_texte = str(self.compteur)
         self.slider_label_text = str(int(widget.value))
+    
+    def ProgressBar_value(self, widget):
+        print("ProgressBar value: " + str(int(widget.value)))
+        self.compteur = int(widget.value)
+        self.mon_texte = str(self.compteur)
+        self.slider_label_text = str(int(widget.value))
+    
+        
 
+        
 class GridLayoutExemple(GridLayout):
     pass
+
 
 class StackLayoutExemple(StackLayout):
    def __init__(self, **kwargs):

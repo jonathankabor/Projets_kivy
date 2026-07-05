@@ -23,16 +23,24 @@ WidgetsExemple:
         width: "100dp"
         active: True
     Slider:
-        # id: mon_slider
+        id: mon_slider
         min: 0
         max: 100
         value: 50
         on_value: root.on_slider_value(self)
         orientation: "vertical"
         disabled: not mon_switch.active
-    Label:
-        text: root.slider_label_text
-        # text: str(int(mon_slider.value))
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: root.slider_label_text
+            text: str(int(mon_slider.value))
+        ProgressBar:
+            max: 100
+            min: 1
+            value: mon_slider.value
+        
+            
 
 <PageLayoutExemple@PageLayout>:
     MainWidget:
