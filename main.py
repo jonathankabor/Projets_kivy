@@ -20,6 +20,7 @@ class WidgetsExemple(GridLayout):
     compteur_actif = BooleanProperty(False)
     mon_texte = StringProperty("1")
     slider_label_text = StringProperty("1")
+    text_input_text = StringProperty("Jo Le Magicien")
     
     def on_button_click(self):
         print("Button click")
@@ -57,8 +58,10 @@ class WidgetsExemple(GridLayout):
         self.compteur = int(widget.value)
         self.mon_texte = str(self.compteur)
         self.slider_label_text = str(int(widget.value))
-    
         
+    def on_text_validate(self, widget):
+        print("TextInput validate: " + widget.text)
+        self.text_input_text = widget.text
 
         
 class GridLayoutExemple(GridLayout):
