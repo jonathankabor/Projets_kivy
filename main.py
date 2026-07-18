@@ -5,16 +5,10 @@ from kivy.metrics import dp
 
 
 
-
-
-
-
-        
-
-
 class MyApp(App):
     def build(self):
         return Image(source="images/donut.gif")
+    
 class LeLabApp(App):
     pass
 

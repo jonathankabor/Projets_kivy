@@ -2,7 +2,27 @@
 #:import widget_exemples widget_exemples
 
 
-ImagesExemple:
+MyScreenManager:
+
+
+<MyScreenManager@ScreenManager>:
+    Screen:
+        name: "screen1"
+        Button:
+            text: "Button1"
+            on_press: root.transition.direction = 'left' ; root.current = "screen3"
+
+    Screen:
+        name: "screen2"
+        Button:
+            text: "Button2"
+            on_press: root.transition.direction = 'right' ; root.current = root.previous()
+
+    Screen:
+        name: "screen3"
+        Button:
+            text: "Button3"
+            on_press: root.transition.direction = 'right' ; root.current = root.previous()
 
 
 
