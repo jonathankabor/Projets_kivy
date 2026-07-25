@@ -6,6 +6,7 @@ from navigation_screen_manager import NavigationScreenManager
 from canvas_exemples import CanvasExemple1
 from canvas_exemples import CanvasExemple2
 from canvas_exemples import CanvasExemple3
+from canvas_exemples import *
 from kivy.properties import ObjectProperty
 
 
@@ -24,7 +25,7 @@ class LeLabApp(App):
     def build(self):
         self.manager = MyscreenManager()
         # return self.manager
-        return CanvasExemple3()
+        return CanvasExemple4()
     
 
 
