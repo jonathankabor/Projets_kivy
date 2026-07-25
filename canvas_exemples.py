@@ -11,3 +11,6 @@ class CanvasExemple1(Widget):
 
 class CanvasExemple2(Widget):
     pass
+
+class CanvasExemple3(Widget):
+    pass
