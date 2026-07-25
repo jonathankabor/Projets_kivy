@@ -29,6 +29,13 @@ class CanvasExemple4(Widget):
     def on_button_a_click(self):
         # print("Button A clicked!")
         x, y = self.rect.pos
+        w, h = self.rect.size
+        inc = dp(10)  # Increment value in pixels
         x += dp(10)  # Move 10 pixels to the right
+        # bord droit : x+w
+        diff = self.width - (x + w)
+        if diff < inc:
+            inc = diff
+        x += inc
         self.rect.pos = (x, y)
         
