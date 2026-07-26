@@ -71,3 +71,6 @@ class CanvasExemple5(Widget):
             self.vy = -self.vy  # Reverse vertical direction
             y += self.vy  # Move the ball back within bounds
         self.ball.pos = (x, y)
+        
+class CanvasExemple6(Widget):
+    pass
