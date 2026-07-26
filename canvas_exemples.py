@@ -1,6 +1,8 @@
+from kivy.graphics.vertex_instructions import Ellipse, Line, Rectangle
 from kivy.uix.widget import Widget
 from kivy.graphics import Color, Line, Rectangle
 from kivy.metrics import dp
+from kivy.properties import Clock
 from kivy.uix.widget import Builder 
 
 
@@ -39,3 +41,21 @@ class CanvasExemple4(Widget):
         x += inc
         self.rect.pos = (x, y)
         
+        
+class CanvasExemple5(Widget):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ball_size = dp(50)
+        with self.canvas:
+            self.ball = Ellipse(pos=(self.center), size=(self.ball_size, self.ball_size))
+        Clock.schedule_interval(self.update, 1/60)  # Update at 60 FPS
+            
+    
+    def on_size(self, *args):
+        print("on_size: " + str(self.width) + ", " + str(self.height))
+        self.ball.pos = (self.center_x - self.ball_size / 2, self.center_y - self.ball_size / 2)
+        
+    def update(self, dt):
+        # print("update")
+        x, y = self.ball.pos
+        self.ball.pos = (x + dp(4), y)
