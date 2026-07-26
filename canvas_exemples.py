@@ -46,6 +46,8 @@ class CanvasExemple5(Widget):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.ball_size = dp(50)
+        self.vx = dp(3)  # Velocity in pixels per frame
+        self.vy = dp(4)  # Velocity in pixels per frame
         with self.canvas:
             self.ball = Ellipse(pos=(self.center), size=(self.ball_size, self.ball_size))
         Clock.schedule_interval(self.update, 1/60)  # Update at 60 FPS
@@ -58,4 +60,14 @@ class CanvasExemple5(Widget):
     def update(self, dt):
         # print("update")
         x, y = self.ball.pos
-        self.ball.pos = (x + dp(4), y)
+        
+        x += self.vx
+        y += self.vy
+        
+        if x <= 0 or x + self.ball_size >= self.width:
+            self.vx = -self.vx  # Reverse horizontal direction
+            x += self.vx  # Move the ball back within bounds
+        if y <= 0 or y + self.ball_size >= self.height:
+            self.vy = -self.vy  # Reverse vertical direction
+            y += self.vy  # Move the ball back within bounds
+        self.ball.pos = (x, y)
