@@ -15,12 +15,20 @@
     Button:
         text: "Images"
         on_press: app.manager.push("ImagesExemple")
-
+    Button:
+        text: "Canvas"
+        on_press: app.manager.push("CanvasExemplesTabs")
 
 <MyScreenManager>:
     Screen:
         name: "MenuPrincipal"
         MenuPrincipal:
+
+    Screen: 
+        name: "CanvasExemplesTabs"
+        BoxLayoutWithActionBar:
+            title: "Canvas"
+            CanvasExemplesTabs:
       
     Screen:
         name: "LayoutExemplesTabs"
