@@ -4,6 +4,7 @@ from kivy.graphics import Color, Line, Rectangle
 from kivy.metrics import dp
 from kivy.properties import Clock
 from kivy.uix.widget import Builder 
+from kivy.uix.boxlayout import BoxLayout
 
 
 Builder.load_file('canvas_exemples.kv')
@@ -73,4 +74,8 @@ class CanvasExemple5(Widget):
         self.ball.pos = (x, y)
         
 class CanvasExemple6(Widget):
+    pass
+
+
+class CanvasExemple7(BoxLayout):
     pass
